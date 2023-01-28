@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>turtle hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="">
+</head>
+<body>
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    
+    </script>
+    <p>烏龜查詢系統</p>
+    <div class="input">
+        <form action="/" method = "POST">
+            <input type="text" name="turtle" placeholder="ex. cat-turtle, pig-turtle, CLoveYC-turtle......">
+            <br>
+            <input type="submit" name="submit" value="send">
+        </form>
+    </div>
+    {% if results %}
+    <ul>
+        <li><img src="{{ url_for('static', filename='images/turtle/'+results)}}">{{ results }}</li>
+    </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+    </div>
+</body>
+</html>
