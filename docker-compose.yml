@@ -1,0 +1,43 @@
+version: "3.7"
+
+services:
+  notrickroll:
+    build: ./NotRickRoll
+    container_name: NotRickRoll
+    # restart: always
+    environment:
+      - APP_NAME=FlaskApp
+    ports:
+      - 8401:5000
+  cookie:
+    build: ./cookie
+    container_name: cookie
+    # restart: always
+    environment:
+      - APP_NAME=FlaskApp
+    ports:
+      - 8402:5000
+  div:
+    build: ./div
+    container_name: div
+    # restart: always
+    environment:
+      - APP_NAME=FlaskApp
+    ports:
+      - 8403:5000
+  mumumumumu:
+    build: ./mumumumumu
+    container_name: mumumumumu
+    # restart: always
+    environment:
+      - APP_NAME=FlaskApp
+    ports:
+      - 8404:5000
+  water:
+    build: ./water
+    container_name: water
+    # restart: always
+    environment:
+      - APP_NAME=FlaskApp
+    ports:
+      - 8405:5000
